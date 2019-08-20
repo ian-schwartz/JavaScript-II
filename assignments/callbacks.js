@@ -39,26 +39,82 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 */
 
 
+// function getLength(arr, cb) {
+//   // getLength passes the length of the array into the callback.
+// }
+
 function getLength(arr, cb) {
-  // getLength passes the length of the array into the callback.
+  return cb(arr.length);
 }
+
+const testLength = (items, cb) => {
+  return `${items}`;
+};
+
+console.log(getLength(items, testLength));
+
+// function last(arr, cb) {
+//   // last passes the last item of the array into the callback.
+// }
 
 function last(arr, cb) {
-  // last passes the last item of the array into the callback.
+  return cb(arr[arr.length-1]);
 }
+
+const testLast = (items, cb) => {
+  return `${items}`;
+}
+
+console.log(last(items, testLast));
+
+// function sumNums(x, y, cb) {
+//   // sumNums adds two numbers (x, y) and passes the result to the callback.
+// }
 
 function sumNums(x, y, cb) {
-  // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return cb(x, y);
 }
+
+const testSumNums = (x, y, cb) => {
+  return x + y;
+}
+
+console.log(sumNums(1, 2, testSumNums));
+
+
+// function multiplyNums(x, y, cb) {
+//   // multiplyNums multiplies two numbers and passes the result to the callback.
+// }
 
 function multiplyNums(x, y, cb) {
-  // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb(x, y);
 }
 
-function contains(item, list, cb) {
-  // contains checks if an item is present inside of the given array/list.
-  // Pass true to the callback if it is, otherwise pass false.
+const testMultiplyNums = (x, y, cb) => {
+  return x * y;
 }
+
+console.log(multiplyNums(3, 4, testMultiplyNums))
+
+// function contains(item, list, cb) {
+//   // contains checks if an item is present inside of the given array/list.
+//   // Pass true to the callback if it is, otherwise pass false.
+// }
+
+function contains(item, list, cb) {
+  return cb(item, list)
+}
+
+const testContains = (item, list) => {
+  for (let i = 0; i < list.length; i++) {
+    if (item === list[i]) {
+    return true;
+  } 
+ }
+ return false;
+}
+
+console.log(contains('Gum', items, testContains));
 
 /* STRETCH PROBLEM */
 
