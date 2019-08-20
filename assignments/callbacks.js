@@ -105,17 +105,16 @@ function contains(item, list, cb) {
   return cb(item, list)
 }
 
-const testContains = (item, list, cb) => {
-  for(let i = 0; i < list.length; i++) {
-    if (`${item}` === `${item}`) {
+const testContains = (item, list) => {
+  for (let i = 0; i < list.length; i++) {
+    if (item === list[i]) {
     return true;
-  } else {
-    return false;
-  }
+  } 
  }
+ return false;
 }
 
-console.log(contains('Pencil', items, testContains));
+console.log(contains('Gum', items, testContains));
 
 /* STRETCH PROBLEM */
 
